@@ -1,25 +1,35 @@
 
-#include <iostream>
-using namespace std;
-bool isPrime(int n){
-   for(int i = 2; i < n/2; i++){
-      if(n%i == 0){
-         return false;
-      }
-   }
-   return true;
-}
-int findPrimeSum(int n){
-   int sumVal = 0;
-   for(float i = 2; i <= n; i++){
-      if(isPrime(i))
-         sumVal += i;
-   }
-   return sumVal;
 
-}
-int main(){
-   int n = 15;
-   cout<<"The sum of prime number between 1 to "<<n<<" is "<<findPrimeSum(n);
-   return 0;
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    int num, i, upto, sum = 0;
+
+    // Take input from user
+    cout << "Find sum of prime numbers upto : ";
+    cin >> upto;
+
+    for(num = 2; num <= upto; num++) {
+
+        for(i = 2; i <= (num / 2); i++) {
+
+            if(num % i == 0) {
+                i = num;
+                break;
+            }
+        }
+
+        // If the number is prime then add it.
+        if(i != num) {
+            sum += num;            
+        }
+    }
+
+    cout << endl << "Sum of all prime numbers upto " << upto << " : " << sum;
+
+    return 0;
 }
