@@ -1,4 +1,4 @@
-# Dcit104_1
+
 #include <iostream>
 using namespace std;
 bool isPrime(int n){
